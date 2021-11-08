@@ -1,0 +1,27 @@
+﻿<Window x:Class="My_Briefcase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Briefcase"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="My-Briefcase" Height="440" Width="800" Background="#101010" Foreground="#EEFFFF">
+    <Grid>
+        <Grid Margin="0,0,0,10">
+            <Label Foreground="#EEFFFF" FontSize="36" FontFamily="Curlz MT" FontStyle="Normal" Margin="210,22,210,355" >Welcome to My Briefcase</Label>
+            <Rectangle HorizontalAlignment="Center" Height="241" Margin="0,94,0,0" Stroke="White" VerticalAlignment="Top" Width="636"/>
+            <Label x:Name="label" Foreground="#EEFFFF" Content="What would you like to do today ?"  Width="512" Height="50" Margin="144,111,144,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="28" FontFamily="Times New Roman"/>
+            <Grid HorizontalAlignment="Center" Height="58" VerticalAlignment="Top" Width="170" Margin="0,207,0,0">
+                <RadioButton x:Name="activity" Content="New Encryption ?" FontFamily="Cambria" FontSize="20px" Foreground="#EEFFFF" HorizontalAlignment="Center" VerticalAlignment="Top" Checked="activity_Checked"/>
+                <RadioButton x:Name="activity1" Content="Decryption ?" FontFamily="Cambria" FontSize="20px" Foreground="#EEFFFF" HorizontalAlignment="Left" Margin="0,36,0,0" Checked="activity1_Checked"/>
+            </Grid>
+            <Button x:Name="button" HorizontalAlignment="Left" Margin="705,10,0,0" VerticalAlignment="Top" BorderBrush="Black" FontFamily="Cambria" FontSize="18" FontWeight="Bold"  ToolTip="Close" RenderTransformOrigin="1.717,0.484" Width="68" Click="button_Click" Height="65" Background="#101010">
+                <StackPanel>
+                    <Image Source="Pictures/power-on.png" Height="48" Width="52" />
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

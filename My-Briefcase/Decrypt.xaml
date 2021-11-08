@@ -1,0 +1,33 @@
+﻿<Window x:Class="My_Briefcase.Decrypt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Briefcase"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="My-Briefcase" Height="450" Width="800" Background="#101010" Foreground="#EEFFFF" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="label" Content="Select the File Which you want to Decrypt" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="#EEFFFF" Height="57" Width="480" FontSize="25px"/>
+        <Label x:Name="label_Copy" Content="File Name" HorizontalAlignment="Left" Margin="37,89,0,0" VerticalAlignment="Top" Foreground="#EEFFFF" Height="27" Width="129" FontSize="15px"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="171,95,0,0" VerticalAlignment="Top" Width="413" Height="21" Background="#101010" Foreground="#101010" FontFamily="Cambria" BorderBrush="Black"/>
+        <RichTextBox x:Name="richTextBox" Margin="0,144,0,66" Foreground="lime" Background="#101010" FontFamily="Cambria" FontSize="14">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="button" Content="Close and Re-Encrypt" HorizontalAlignment="Left" Margin="610,407,0,0" VerticalAlignment="Top" Click="button_Click"/>
+        <Button x:Name="button1" Content="Decrypt the Contents" HorizontalAlignment="Left" Margin="610,96,0,0" VerticalAlignment="Top" Click="button1_Click"/>
+        <Label x:Name="label1" Content="Status" Foreground="red" HorizontalAlignment="Left" Margin="10,399,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Foreground="red" HorizontalAlignment="Left" Margin="64,399,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Foreground="red" HorizontalAlignment="Left" Margin="21,425,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" HorizontalAlignment="Left" Margin="725,10,0,0" VerticalAlignment="Top" BorderBrush="Black" FontFamily="Cambria" FontSize="18" FontWeight="Bold"  ToolTip="Close" RenderTransformOrigin="1.717,0.484" Width="65" Click="button2_Click" Height="57" Background="#101010">
+            <StackPanel>
+                <Image Source="Pictures/power-on.png" Height="48" Width="52" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

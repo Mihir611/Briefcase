@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "My-Briefcase": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Briefcase\\My-Briefcase\\My-Briefcase\\bin\\Debug\\net5.0-windows\\My-Briefcase.exe",
+      "workingDirectory": "D:\\My Secrets"
+    }
+  }
+}

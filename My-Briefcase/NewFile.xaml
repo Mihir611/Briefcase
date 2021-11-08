@@ -1,0 +1,40 @@
+﻿<Window x:Class="My_Briefcase.NewFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My_Briefcase"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="My-Briefcase" Height="480" Width="800" Background="#101010" Foreground="#EEFFFF">
+    <Grid>
+        <RichTextBox x:Name="richTextBox" Margin="0,44,0,203" Background="#101010" Foreground="Lime">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label x:Name="label" Content="Enter the Contents" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
+        <Button x:Name="button" Content="Save and Encrypt" HorizontalAlignment="Left" Margin="611,358,0,0" VerticalAlignment="Top" Click="button_Click" Height="22" Width="100"/>
+        <Label x:Name="label_Copy" Content="Current Status : " HorizontalAlignment="Left" Margin="59,356,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
+        <Label x:Name="current_Status" Content="" HorizontalAlignment="Left" Margin="158,358,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Label x:Name="label_Copy2" Content="File Name : " HorizontalAlignment="Left" Margin="59,306,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
+        <TextBox x:Name="file_Name" Margin="136,306,364,148" Background="#101010" Foreground="Lime"></TextBox>
+        <Button x:Name="button1" HorizontalAlignment="Left" Margin="747,13,0,0" VerticalAlignment="Top" Background="#FF101010" Click="button1_Click" BorderBrush="#FF050404">
+            <StackPanel>
+                <Image Source="Pictures/cancel.png" Height="21" SnapsToDevicePixels="True" ClipToBounds="True" OverridesDefaultStyle="True" >
+                    <Image.FocusVisualStyle>
+                        <Style/>
+                    </Image.FocusVisualStyle>
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Button>
+        <Label x:Name="label_Copy1" Content="Time Elapsed : " HorizontalAlignment="Left" Margin="59,412,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
+        <Label x:Name="current_Time" Content="" HorizontalAlignment="Left" Margin="158,412,0,0" VerticalAlignment="Top" Foreground="Red"/>
+    </Grid>
+</Window>
