@@ -3,13 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:My_Briefcase"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="My-Briefcase" Height="450" Width="800" Background="#101010" Foreground="#EEFFFF" Loaded="Window_Loaded">
     <Grid>
-        <Label x:Name="label" Content="Select the File Which you want to Decrypt" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="#EEFFFF" Height="57" Width="480" FontSize="25px"/>
+        <!--<Label x:Name="label" Content="Select the File Which you want to Decrypt" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="#EEFFFF" Height="57" Width="480" FontSize="25px"/>
         <Label x:Name="label_Copy" Content="File Name" HorizontalAlignment="Left" Margin="37,89,0,0" VerticalAlignment="Top" Foreground="#EEFFFF" Height="27" Width="129" FontSize="15px"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="171,95,0,0" VerticalAlignment="Top" Width="413" Height="21" Background="#101010" Foreground="#101010" FontFamily="Cambria" BorderBrush="Black"/>
         <RichTextBox x:Name="richTextBox" Margin="0,144,0,66" Foreground="lime" Background="#101010" FontFamily="Cambria" FontSize="14">
@@ -28,6 +30,49 @@
             <StackPanel>
                 <Image Source="Pictures/power-on.png" Height="48" Width="52" />
             </StackPanel>
-        </Button>
+        </Button>-->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#FFE63070" Offset="1"/>
+                <GradientStop Color="#FFFE8704" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="410" VerticalAlignment="Top" CornerRadius="0 0 170 0" Background="#100E17" />
+        <StackPanel Orientation="Vertical">
+            <WrapPanel>
+                <TextBlock Text="Select the File Which you want to Decrypt" TextAlignment="Center" FontSize="24" FontFamily="Harrington" Margin="20 20 20 20" Width="680"/>
+                <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}" ToolTip="Close"
+                        x:Name="btnExit" Click="button2_Click">
+                    <MaterialDesign:PackIcon Kind="Close" Foreground="Red" Width="30" Height="30"/>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,75,0,325">
+            <WrapPanel>
+                <Label Content="File Name" x:Name="label_Copy" FontSize="16" Foreground="#EEFFFF" Margin="20 0 0 0"/>
+                <ComboBox x:Name="comboBox" Background="#101010" Foreground="#00FF00" FontFamily="Cambria" Width="250" Margin="20 0 0 0"/>
+                <Button Margin="220 0 0 0" BorderThickness="2" MaterialDesign:ButtonAssist.CornerRadius="10"
+                        ToolTip="Decrypt the Contents" Style="{StaticResource MaterialDesignRaisedButton}" 
+                        Content="Decrypt the Contents" Foreground="#101010" Click="button1_Click"/>
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,130,0,105">
+            <RichTextBox x:Name="richTextBox" Margin="20" Foreground="#00FF00" Background="#101010" FontFamily="Cambria" FontSize="14" Height="168" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="0,329,0,10">
+            <WrapPanel>
+                <Label x:Name="label1" Content="Status" Foreground="red" FontSize="16" Margin="20"/>
+                <Label x:Name="label2" Foreground="red" FontSize="16" Margin="20"/>
+                <Button x:Name="button" Content="Close and Re-Encrypt" BorderThickness="2" MaterialDesign:ButtonAssist.CornerRadius="10"
+                        ToolTip="Decrypt the Contents" Margin="400 0 0 0" Style="{StaticResource MaterialDesignRaisedButton}" 
+                        Foreground="#101010" Click="button_Click" />
+            </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>
