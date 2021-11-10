@@ -43,5 +43,33 @@ namespace My_Briefcase
             dec.Show();
             this.Close();
         }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // DragMove();
+        }
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        { 
+            if(txtUsername.Text == "" && txtPassword.Password == "")
+            {
+                MessageBox.Show("Please input the user name and password fields");
+            }
+            else
+            {
+                LoginStack.Visibility = Visibility.Collapsed;
+                WhatDo.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            WhatDo.Visibility = Visibility.Collapsed;
+        }
     }
 }
