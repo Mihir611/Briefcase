@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:My_Briefcase"
         mc:Ignorable="d"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Title="My-Briefcase" Height="440" Width="800" Background="#101010" Foreground="#EEFFFF">
-    <Grid>
-        <Grid Margin="0,0,0,10">
+        Title="My-Briefcase" Height="450" Width="800" WindowStyle="None"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid MouseDown="Border_MouseDown" Loaded="Grid_Loaded">
+        <!--<Grid Margin="0,0,0,10">
             <Label Foreground="#EEFFFF" FontSize="36" FontFamily="Curlz MT" FontStyle="Normal" Margin="210,22,210,355" >Welcome to My Briefcase</Label>
             <Rectangle HorizontalAlignment="Center" Height="241" Margin="0,94,0,0" Stroke="White" VerticalAlignment="Top" Width="636"/>
             <Label x:Name="label" Foreground="#EEFFFF" Content="What would you like to do today ?"  Width="512" Height="50" Margin="144,111,144,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="28" FontFamily="Times New Roman"/>
@@ -22,6 +22,66 @@
                     <Image Source="Pictures/power-on.png" Height="48" Width="52" />
                 </StackPanel>
             </Button>
-        </Grid>
+        </Grid>-->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#FFE63070" Offset="1"/>
+                <GradientStop Color="#FFFE8704" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#100E17" MouseDown="Border_MouseDown"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="350">
+                <Image Source="/Images/login.png" Height="337" VerticalAlignment="Top" Margin="40,40,41.4,40" Stretch="Uniform"/>
+            </StackPanel>
+            <StackPanel Width="350">
+                <TextBlock Text="Briefcase Password Manager" TextWrapping="Wrap" Margin="20" Foreground="#EEFFFF" TextAlignment="Center" FontSize="36" FontFamily="Harrington"/>
+                <StackPanel x:Name="LoginStack">
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <TextBlock Text="Please Login to Continue" Margin="20" Foreground="#EEFFFF" FontSize="22" FontFamily="Bahnschrift Condensed" TextAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <MaterialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="white"/>
+                        <TextBox x:Name="txtUsername" Margin="10 0" MaterialDesign:HintAssist.Hint="Enter User_Name" Foreground="White" Width="250" BorderBrush="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" FontFamily="Gerogia"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <MaterialDesign:PackIcon Kind="Lock" Width="25" Height="25" Foreground="white"/>
+                        <PasswordBox x:Name="txtPassword" Margin="10 0" MaterialDesign:HintAssist.Hint="*********" Foreground="White" Width="250" BorderBrush="White" CaretBrush="#FFD94448" SelectionBrush="#FFD94448"/>
+                    </StackPanel>
+                    <StackPanel Margin="10" HorizontalAlignment="Center">
+                        <Button Width="100" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                        MaterialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" BorderBrush="#D94448"
+                        Background="#0BDA51" Foreground="#101010" ToolTip="LogIn" x:Name="btnLogin" Click="BtnLogin_Click" Content="Login"></Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel x:Name="WhatDo">
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <TextBlock Text="What do you want to do ?" Margin="20" Foreground="#EEFFFF" FontSize="22" FontFamily="Bahnschrift Condensed" TextAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <RadioButton GroupName="Tasks" x:Name="activity" VerticalContentAlignment="Center" Checked="activity_Checked" >
+                            <WrapPanel>
+                                <MaterialDesign:PackIcon Kind="EnhancedEncryption"  Width="25" Height="25" Foreground="white"/>
+                                <Label Content="New Encryption" Foreground="#EEFFFF"></Label>
+                            </WrapPanel>
+                        </RadioButton>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <RadioButton GroupName="Tasks" VerticalContentAlignment="Center" x:Name="activity1" Checked="activity1_Checked" >
+                            <WrapPanel>
+                                <MaterialDesign:PackIcon Kind="DecryptedAdd"  Width="25" Height="25" Foreground="white"/>
+                                <Label Content="Decryprtion" Foreground="#EEFFFF"></Label>
+                            </WrapPanel>
+                        </RadioButton>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="100">
+                <Button Margin="10 20" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}" ToolTip="Close"
+                        x:Name="btnExit" Click="BtnExit_Click">
+                    <MaterialDesign:PackIcon Kind="Close" Foreground="Red" Width="30" Height="30"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
