@@ -3,38 +3,64 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:My_Briefcase"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Title="My-Briefcase" Height="480" Width="800" Background="#101010" Foreground="#EEFFFF">
     <Grid>
-        <RichTextBox x:Name="richTextBox" Margin="0,44,0,203" Background="#101010" Foreground="Lime">
-            <FlowDocument>
-                <Paragraph>
-                    <Run Text="RichTextBox"/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
-        <Label x:Name="label" Content="Enter the Contents" HorizontalAlignment="Left" Margin="65,10,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
-        <Button x:Name="button" Content="Save and Encrypt" HorizontalAlignment="Left" Margin="611,358,0,0" VerticalAlignment="Top" Click="button_Click" Height="22" Width="100"/>
-        <Label x:Name="label_Copy" Content="Current Status : " HorizontalAlignment="Left" Margin="59,356,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
-        <Label x:Name="current_Status" Content="" HorizontalAlignment="Left" Margin="158,358,0,0" VerticalAlignment="Top" Foreground="Red"/>
-        <Label x:Name="label_Copy2" Content="File Name : " HorizontalAlignment="Left" Margin="59,306,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
-        <TextBox x:Name="file_Name" Margin="136,306,364,148" Background="#101010" Foreground="Lime"></TextBox>
-        <Button x:Name="button1" HorizontalAlignment="Left" Margin="747,13,0,0" VerticalAlignment="Top" Background="#FF101010" Click="button1_Click" BorderBrush="#FF050404">
-            <StackPanel>
-                <Image Source="Pictures/cancel.png" Height="21" SnapsToDevicePixels="True" ClipToBounds="True" OverridesDefaultStyle="True" >
-                    <Image.FocusVisualStyle>
-                        <Style/>
-                    </Image.FocusVisualStyle>
-                    <Image.Effect>
-                        <DropShadowEffect/>
-                    </Image.Effect>
-                </Image>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#FFE63070" Offset="1"/>
+                <GradientStop Color="#FFFE8704" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="410" VerticalAlignment="Top" CornerRadius="0 0 170 0" Background="#100E17" />
+        <StackPanel Orientation="Vertical">
+            <WrapPanel>
+                <TextBlock Text="Enter the Contents" TextAlignment="Center" FontSize="24" FontFamily="Harrington" Margin="20 20 20 20" Width="680"/>
+                <Button Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}" ToolTip="Close"
+                        x:Name="btnExit" Click="button1_Click">
+                    <MaterialDesign:PackIcon Kind="Close" Foreground="Red" Width="30" Height="30"/>
+                </Button>
+            </WrapPanel>
+            <StackPanel Orientation="Vertical" Height="250">
+                <RichTextBox x:Name="richTextBox" Margin="30" Background="#101010" FontFamily="Cambria" FontSize="16" Foreground="Lime" Height="190">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="RichTextBox"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
             </StackPanel>
-        </Button>
-        <Label x:Name="label_Copy1" Content="Time Elapsed : " HorizontalAlignment="Left" Margin="59,412,0,0" VerticalAlignment="Top" Foreground="#EEFFFF"/>
-        <Label x:Name="current_Time" Content="" HorizontalAlignment="Left" Margin="158,412,0,0" VerticalAlignment="Top" Foreground="Red"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Width="350">
+                    <WrapPanel>
+                        <TextBlock Text="File Name" FontSize="15" Margin="25 0 0 0"/>
+                        <TextBox x:Name="file_Name" Foreground="Lime" Width="250" Margin="20 0 0 0" />
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="150 0 0 0">
+                    <Button Width="166" x:Name="button1" Style="{StaticResource MaterialDesignRaisedButton}"
+                        BorderThickness="2" BorderBrush="#D94448"
+                        Background="#D94448" Foreground="#101010" MaterialDesign:ButtonAssist.CornerRadius="10" 
+                        ToolTip="Encrypt Data" Content="Save and Encrypt" Click="button_Click"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10 10 0 0">
+                <StackPanel Orientation="Horizontal" Width="400">
+                    <WrapPanel>
+                        <Label x:Name="label_Copy" Content="Current Status : " FontSize="16" Foreground="#EEFFFF"/>
+                        <Label x:Name="current_Status" Foreground="#D94448" FontSize="16" Margin="25 0 0 0"/>
+                    </WrapPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Width="400">
+                    <Label x:Name="label_Copy1" Content="Time Elapsed : " FontSize="16" Foreground="#EEFFFF"/>
+                    <Label x:Name="current_Time" Foreground="#D94448" FontSize="16" Margin="25 0 0 0"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

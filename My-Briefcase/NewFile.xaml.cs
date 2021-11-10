@@ -35,6 +35,23 @@ namespace My_Briefcase
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
+            if (ticks > 0 && ticks <= 27)
+            {
+                MessageBoxResult mbox = MessageBox.Show("There are background tasks running \ndo you want to close the window ? \nIf you close this window progress wont be saved.", "Close Window", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                if (mbox == MessageBoxResult.OK)
+                {
+                    CloseWindow();
+                }
+            }
+            else
+            {
+                CloseWindow();
+            }
+        }
+
+        private void CloseWindow()
+        {
+            timer.Stop();
             MainWindow Home = new();
             Home.Show();
             this.Close();
@@ -95,9 +112,7 @@ namespace My_Briefcase
                 MessageBoxResult result = MessageBox.Show("File has been Encrypted Successfully", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result == MessageBoxResult.OK)
                 {
-                    MainWindow home = new();
-                    home.Show();
-                    this.Close();
+                    CloseWindow();
                 }
             }
         }

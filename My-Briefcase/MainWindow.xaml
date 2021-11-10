@@ -59,7 +59,7 @@
                         <TextBlock Text="What do you want to do ?" Margin="20" Foreground="#EEFFFF" FontSize="22" FontFamily="Bahnschrift Condensed" TextAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10">
-                        <RadioButton GroupName="Tasks" x:Name="activity" VerticalContentAlignment="Center" Checked="activity_Checked" >
+                        <RadioButton GroupName="Tasks" x:Name="activity" VerticalContentAlignment="Center" Checked="activity_Checked" Cursor="Hand" >
                             <WrapPanel>
                                 <MaterialDesign:PackIcon Kind="EnhancedEncryption"  Width="25" Height="25" Foreground="white"/>
                                 <Label Content="New Encryption" Foreground="#EEFFFF"></Label>
@@ -67,7 +67,7 @@
                         </RadioButton>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="10">
-                        <RadioButton GroupName="Tasks" VerticalContentAlignment="Center" x:Name="activity1" Checked="activity1_Checked" >
+                        <RadioButton GroupName="Tasks" VerticalContentAlignment="Center" x:Name="activity1" Checked="activity1_Checked" Cursor="Hand" >
                             <WrapPanel>
                                 <MaterialDesign:PackIcon Kind="DecryptedAdd"  Width="25" Height="25" Foreground="white"/>
                                 <Label Content="Decryprtion" Foreground="#EEFFFF"></Label>
